@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -67,13 +68,6 @@
                      </BorderPane.margin>
                   </Label>
                </bottom>
-               <center>
-                  <VBox fx:id="vBox_liste_joueur" alignment="TOP_CENTER" minHeight="150.0" BorderPane.alignment="CENTER">
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </padding>
-                  </VBox>
-               </center>
                <top>
                   <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="350.0" BorderPane.alignment="CENTER">
                      <children>
@@ -81,10 +75,27 @@
                            <image>
                               <Image url="@../../../../Images/client/app/salleattente/joueurs.png" />
                            </image>
+                           <FlowPane.margin>
+                              <Insets bottom="10.0" />
+                           </FlowPane.margin>
                         </ImageView>
                      </children>
                   </FlowPane>
                </top>
+               <center>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <VBox fx:id="vBox_liste_joueur" alignment="TOP_CENTER">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </ScrollPane>
+               </center>
             </BorderPane>
          </top>
          <center>
@@ -105,17 +116,24 @@
                   </FlowPane>
                </bottom>
                <center>
-                  <VBox fx:id="vBox_chat" minHeight="-Infinity" prefHeight="100.0" BorderPane.alignment="CENTER">
-                     <BorderPane.margin>
-                        <Insets />
-                     </BorderPane.margin>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" minHeight="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <VBox fx:id="vBox_chat">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
-                  </VBox>
+                  </ScrollPane>
                </center>
             </BorderPane>
          </center>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </BorderPane>
    </right>
    <center>

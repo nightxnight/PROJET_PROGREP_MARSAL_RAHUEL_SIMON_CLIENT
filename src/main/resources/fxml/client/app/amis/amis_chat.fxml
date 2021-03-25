@@ -2,28 +2,31 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.chat.CtrlChatAmis">
    <top>
       <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="btn_fermer" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#fermerChat" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../Images/client/app/salleattente/kick.png" />
-               </image>
-               <VBox.margin>
-                  <Insets left="155.0" />
-               </VBox.margin>
-            </ImageView>
+            <FlowPane alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="btn_fermer" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#fermerChat" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/client/app/salleattente/kick.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </FlowPane>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Images/client/app/Amis/chat.png" />
@@ -33,15 +36,6 @@
                <font>
                   <Font name="Impact" size="18.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#ff00bf" />
-                        <Stop color="#8100ff" offset="0.35387289173282777" />
-                        <Stop color="#00feff" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Label>
             <Label fx:id="lbl_nomjoueur" text="nomJoueur">
                <font>
@@ -51,13 +45,6 @@
          </children>
       </VBox>
    </top>
-   <center>
-      <VBox fx:id="vBox_message" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </VBox>
-   </center>
    <bottom>
       <FlowPane alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" BorderPane.alignment="CENTER">
          <children>
@@ -70,4 +57,24 @@
          </children>
       </FlowPane>
    </bottom>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="vBox_message">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </content>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+   </center>
 </BorderPane>
