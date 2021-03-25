@@ -7,9 +7,7 @@ import javafx.geometry.VPos;
 import javafx.scene.Cursor;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.*;
 import javafx.util.Pair;
 
 import java.util.HashMap;
@@ -55,7 +53,7 @@ public class CustomPaneMorpion extends GridPane {
                 ImageView iv = new ImageView();
                 iv.setPreserveRatio(true);
                 iv.setFitHeight(100);
-                iv.setImage(new Image("/Images/client/app/jeux/morpion/libre.png"));
+                iv.setImage(new Image("/Images/client/app/jeux/morpion/libre.png", 100, 100, false, true));
                 iv.setCursor(Cursor.HAND);
                 int idxLigne = i;
                 int idxColonne = j;

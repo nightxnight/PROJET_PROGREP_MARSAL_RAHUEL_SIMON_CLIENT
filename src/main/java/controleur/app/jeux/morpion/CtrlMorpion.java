@@ -2,6 +2,7 @@ package controleur.app.jeux.morpion;
 
 import controleur.app.CtrlPrincipal;
 import controleur.app.jeux.CtrlJeu;
+import javafx.scene.layout.FlowPane;
 import modele.implementation.jeux.JeuxListener;
 import modele.implementation.jeux.morpion.MorpionListener;
 import modele.serveur.stub.jeux.application.JeuxIF;
@@ -24,8 +25,8 @@ public class CtrlMorpion extends CtrlJeu {
 
     String pseudo;
 
-    private final Image croix = new Image("Images/client/app/jeux/morpion/croix.png");
-    private final Image rond = new Image("Images/client/app/jeux/morpion/rond.png");
+    private final Image croix = new Image("Images/client/app/jeux/morpion/croix.png", 100, 100, false, true);
+    private final Image rond = new Image("Images/client/app/jeux/morpion/rond.png", 100, 100, false, true);
 
     /*
      * Communication avec le serveur
@@ -42,7 +43,7 @@ public class CtrlMorpion extends CtrlJeu {
     /*
      * Composants FXML
      */
-    @FXML private BorderPane pnl_principal;
+    @FXML private FlowPane pnl_principal;
     @FXML private Label lbl_message;
 
     private CustomPaneMorpion gp_morpion;
@@ -111,7 +112,7 @@ public class CtrlMorpion extends CtrlJeu {
             tailleTableau = tailleTableauServeur;
             symbole = symboleServeur;
             this.gp_morpion = new CustomPaneMorpion(tailleTableau, tailleTableau, this);
-            pnl_principal.setCenter(gp_morpion);
+            pnl_principal.getChildren().add(gp_morpion);
             activerComposants(false);
         });
     }

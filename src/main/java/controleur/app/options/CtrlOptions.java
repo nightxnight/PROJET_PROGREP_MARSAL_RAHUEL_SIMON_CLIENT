@@ -1,12 +1,14 @@
 package controleur.app.options;
 
 import controleur.app.CtrlPrincipal;
+import javafx.stage.Stage;
 import modele.implementation.connexion.joueur.Joueur;
 import modele.serveur.stub.connexion.session.SessionIF;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
+import vue.app.Connexion;
 
 import java.rmi.RemoteException;
 import java.time.LocalDate;
@@ -42,6 +44,7 @@ public class CtrlOptions {
     @FXML private TextField tf_date_inscrit;
     @FXML private Label lbl_erreur_modif;
     @FXML private Button btn_valide;
+    @FXML private Button btn_deconnexion;
 
     public void initialiser(CtrlPrincipal parent, String pseudo, SessionIF session) {
         this.parent = parent;
@@ -143,5 +146,16 @@ public class CtrlOptions {
                 ButtonType.OK);
         alert.setHeaderText("Alerte information");
         alert.showAndWait();
+    }
+
+    @FXML
+    void seDeconnecter(MouseEvent event) {
+        try {
+            session.logout();
+            ((Stage) btn_deconnexion.getScene().getWindow()).close();
+            new Connexion().start(new Stage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

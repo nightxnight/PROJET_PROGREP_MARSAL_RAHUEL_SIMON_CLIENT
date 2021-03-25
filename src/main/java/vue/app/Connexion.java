@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import utils.composants.ConfirmationAlert;
+import utils.composants.ErrorAlert;
+
+import java.rmi.RemoteException;
 
 public class Connexion extends Application {
 
@@ -17,6 +21,9 @@ public class Connexion extends Application {
      * charger la configuration utilisateur si elle existe sinon
      * elle la créera. Elle se connectera au serveur, etc ...
      */
+    public Connexion() {
+        super();
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -27,6 +34,11 @@ public class Connexion extends Application {
         stage.centerOnScreen();
         stage.getIcons().add(new Image("Images/client/connexion_icon_taskbar.png"));
         stage.setResizable(false);
+        stage.setOnCloseRequest(Event -> {
+            System.exit(1);
+        });
         stage.show();
+        new ConfirmationAlert("message").showAndWait();
+
     }
 }
