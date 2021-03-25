@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.options.CtrlOptions">
+   <top>
+      <FlowPane alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/options/titreOptions.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="280.0" />
+          <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Changer le theme de l'application : " GridPane.rowIndex="1">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <RadioButton fx:id="rb_theme_sombre" mnemonicParsing="false" selected="true" text="Theme sombre">
+                     <font>
+                        <Font name="Impact" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tg_theme" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rb_theme_clair" mnemonicParsing="false" text="Theme clair" toggleGroup="$tg_theme">
+                     <font>
+                        <Font name="Impact" size="16.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets left="40.0" />
+                     </FlowPane.margin>
+                  </RadioButton>
+               </children>
+            </FlowPane>
+            <Label text="Application" GridPane.halignment="LEFT">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label text="Profil" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label text="Pseudo : " GridPane.rowIndex="3">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label text="Adresse mail : " GridPane.rowIndex="4">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label text="Nouveau mot de passe : " GridPane.rowIndex="6">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label text="Confirmation : " GridPane.rowIndex="7">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label text="Inscrit depuis le : " GridPane.rowIndex="9">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Button fx:id="btn_valide" mnemonicParsing="false" onMouseClicked="#appliquerChangements" text="Valider les modifications" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="11">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="273.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="tf_date_inscrit" disable="true" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <TextField fx:id="tf_mail" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                  <Label fx:id="lbl_erreur_mail" text="Erreur" textFill="RED">
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <PasswordField fx:id="pf_mdp" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                  <Label fx:id="lbl_erreur_mdp" text="Erreur" textFill="RED">
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <PasswordField fx:id="pf_confirm" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                  <Label fx:id="lbl_erreur_confirm" text="Erreur" textFill="RED">
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+            </FlowPane>
+            <TextField fx:id="tf_pseudo" disable="true" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <DatePicker fx:id="dp_anniv" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                  <Label fx:id="lbl_erreur_anniv" text="Erreur" textFill="RED">
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+            </FlowPane>
+            <Label text="Mot de passe actuel : " GridPane.rowIndex="5">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <PasswordField fx:id="pf_ancienmdp" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                  <Label fx:id="lbl_erreur_ancienmdp" text="Erreur" textFill="RED">
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </Label>
+               </children>
+            </FlowPane>
+            <Label fx:id="lbl_erreur_modif" text="Erreur" textFill="RED" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="10">
+               <GridPane.margin>
+                  <Insets left="339.0" />
+               </GridPane.margin></Label>
+            <FlowPane alignment="CENTER_RIGHT" GridPane.rowIndex="8">
+               <children>
+                  <Label text="Anniversaire">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <ImageView fitHeight="35.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Images/client/app/options/birthday-cake.png" />
+                     </image>
+                  </ImageView>
+                  <Label text=" : ">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </FlowPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.connexion.CtrlInscription">
+   <columnConstraints>
+      <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
+      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <ImageView fitHeight="120.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+         <image>
+            <Image url="@../../../../Images/client/app/connexion/inscription.png" />
+         </image>
+      </ImageView>
+      <Label text="Nom d'utilisateur : " GridPane.rowIndex="1">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Anniversaire: " GridPane.rowIndex="3">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Mot de passe : " GridPane.rowIndex="4">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Confirmation : " GridPane.rowIndex="5">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <TextField fx:id="tf_pseudo" />
+            <Label fx:id="lbl_erreur_pseudo" alignment="CENTER" text="erreur" textAlignment="CENTER" textFill="RED">
+               <FlowPane.margin>
+                  <Insets left="5.0" />
+               </FlowPane.margin>
+            </Label>
+         </children>
+      </FlowPane>
+      <Label text="Adresse mail : " GridPane.rowIndex="2">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <TextField fx:id="tf_mail" />
+            <Label fx:id="lbl_erreur_mail" alignment="CENTER" text="erreur" textAlignment="CENTER" textFill="RED">
+               <FlowPane.margin>
+                  <Insets left="5.0" />
+               </FlowPane.margin>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <DatePicker fx:id="dp_anniv" prefHeight="25.0" prefWidth="150.0" promptText="jj/mm/aaaa" />
+            <Label fx:id="lbl_erreur_anniv" alignment="CENTER" text="erreur" textAlignment="CENTER" textFill="RED">
+               <FlowPane.margin>
+                  <Insets left="5.0" />
+               </FlowPane.margin>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <PasswordField fx:id="pf_mdp" />
+            <Label fx:id="lbl_erreur_mdp" alignment="CENTER" text="erreur" textAlignment="CENTER" textFill="RED">
+               <FlowPane.margin>
+                  <Insets left="5.0" />
+               </FlowPane.margin>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <PasswordField fx:id="pf_confirmation" />
+            <Label fx:id="lbl_erreur_confirm" alignment="CENTER" text="erreur" textAlignment="CENTER" textFill="RED">
+               <FlowPane.margin>
+                  <Insets left="5.0" />
+               </FlowPane.margin>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" orientation="VERTICAL" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <children>
+            <Label fx:id="lbl_erreur" alignment="CENTER" text="erreur" textAlignment="CENTER" textFill="RED">
+               <FlowPane.margin>
+                  <Insets bottom="25.0" top="25.0" />
+               </FlowPane.margin>
+            </Label>
+            <Button fx:id="btn_inscription" mnemonicParsing="false" onMouseClicked="#seInscrire" prefHeight="33.0" prefWidth="195.0" text="s'inscrire">
+               <font>
+                  <Font name="Impact" size="15.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets top="10.0" />
+               </FlowPane.margin>
+            </Button>
+         </children>
+      </FlowPane>
+      <Hyperlink fx:id="lk_compte" accessibleRole="BUTTON" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#retourConnexion" prefHeight="30.0" prefWidth="195.0" text="Deja un compte ?" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" underline="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#cc46d3" />
+                  <Stop color="#2e88ae" offset="0.4845360824742268" />
+                  <Stop color="#32c8ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Hyperlink>
+   </children>
+</GridPane>

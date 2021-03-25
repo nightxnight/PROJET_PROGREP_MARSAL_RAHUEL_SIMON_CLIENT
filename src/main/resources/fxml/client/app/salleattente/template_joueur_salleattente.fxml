@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.salleattente.CtrlSalleAttenteJoueurTempl">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="40.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <FlowPane alignment="CENTER_LEFT" columnHalignment="CENTER">
+         <children>
+            <Label fx:id="lbl_nom_joueur" text="Nom Joueur">
+               <font>
+                  <Font name="Impact" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="iv_proprietaire" fitHeight="48.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/salleattente/crowns.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="10.0" />
+               </FlowPane.margin>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </FlowPane>
+      <Circle fx:id="circle_pret" fill="WHITE" radius="10.0" stroke="WHITE" strokeType="INSIDE" GridPane.columnIndex="3" />
+      <ImageView fx:id="btn_exclure" accessibleRole="BUTTON" fitHeight="89.0" fitWidth="33.0" onMouseClicked="#exclure" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+         <image>
+            <Image url="@../../../../Images/client/app/salleattente/kick.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btn_designer_proprietaire" accessibleRole="BUTTON" fitHeight="78.0" fitWidth="33.0" onMouseClicked="#nommerProprietaire" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+         <image>
+            <Image url="@../../../../Images/client/app/salleattente/designerproprietaire.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</GridPane>

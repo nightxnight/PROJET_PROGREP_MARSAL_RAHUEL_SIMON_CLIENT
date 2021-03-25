@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.salleattente.CtrlCreationSalleAttente">
+   <top>
+      <FlowPane alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="110.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <ImageView fitHeight="126.0" fitWidth="456.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/salleattente/creation_salleattente.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets left="10.0" />
+               </FlowPane.margin>
+            </ImageView>
+         </children>
+      </FlowPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
+            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Nom de la salle : ">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Mot de passe (si necessaire) : " GridPane.rowIndex="1">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <Label text="prive :" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_nom_salle" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <PasswordField fx:id="pf_mdp" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <CheckBox fx:id="cb_publique" graphicTextGap="0.0" mnemonicParsing="false" scaleX="1.25" scaleY="1.25" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="7.0" />
+               </GridPane.margin>
+            </CheckBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" maxHeight="400.0" minHeight="-Infinity" orientation="VERTICAL" prefHeight="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lbl_erreur" text="erreur" textFill="RED">
+               <FlowPane.margin>
+                  <Insets bottom="30.0" />
+               </FlowPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER" hgap="10.0">
+               <children>
+                  <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#retour_liste" prefWidth="90.0" text="Annuler">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                     <FlowPane.margin>
+                        <Insets />
+                     </FlowPane.margin>
+                  </Button>
+                  <Button fx:id="btn_creer" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#creer_salleattente" prefWidth="90.0" text="Creer">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </FlowPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+   </bottom>
+</BorderPane>

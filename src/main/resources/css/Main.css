@@ -1,0 +1,40 @@
+.root {
+    -fx-base: rgba(60, 60, 60, 255);
+}
+#BP_Login{
+    -fx-background-color: rgb(48, 48, 48); ;
+}
+
+#AccueilTitle{
+    -fx-background-color: rgb(33, 31, 31);;
+}
+
+#btn_connexion:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+#btn_accueil:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+#btn_jeux:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+#btn_parametres:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+#btn_salleattente:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+#btn_apropos:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+#btn_amis:hover {
+    -fx-background-color: rgb(33, 31, 31);
+    -fx-scale-y: 1.1;
+}
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<BorderPane fx:id="pnl_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1100.0" stylesheets="@../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.CtrlPrincipal">
+   <bottom>
+      <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lbl_fil_ariane" alignment="BASELINE_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: rgb(48, 48, 48);" text="Fil d'ariane">
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </FlowPane>
+   </bottom>
+</BorderPane>

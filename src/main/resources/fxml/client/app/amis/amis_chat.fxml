@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.amis.chat.CtrlChatAmis">
+   <top>
+      <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="btn_fermer" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#fermerChat" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/salleattente/kick.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="155.0" />
+               </VBox.margin>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/Amis/chat.png" />
+               </image>
+            </ImageView>
+            <Label text="Votre conversation avec  :">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#ff00bf" />
+                        <Stop color="#8100ff" offset="0.35387289173282777" />
+                        <Stop color="#00feff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="lbl_nomjoueur" text="nomJoueur">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox fx:id="vBox_message" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <FlowPane alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="tf_message" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" promptText="envoyer un message" />
+            <ImageView fx:id="btn_envoyer" accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#envoyerMessage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/salleattente/send.png" />
+               </image>
+            </ImageView>
+         </children>
+      </FlowPane>
+   </bottom>
+</BorderPane>

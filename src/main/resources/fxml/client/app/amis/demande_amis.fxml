@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.amis.CtrlDemandeAmis">
+   <bottom>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/Amis/AddFriend.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets bottom="20.0" />
+               </FlowPane.margin>
+            </ImageView>
+            <TextField fx:id="tf_ajout" prefHeight="25.0" prefWidth="120.0" promptText="Ajouter un ami" />
+            <Label fx:id="lbl_erreur" text="erreur" textFill="RED">
+               <FlowPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </FlowPane.margin>
+            </Label>
+            <ImageView fx:id="btn_ajout" accessibleRole="BUTTON" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#ajoutAmis" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Images/client/app/Amis/Ajouter.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </FlowPane>
+   </bottom>
+   <center>
+      <VBox fx:id="vbox_demandes" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label fx:id="lbl_vide" text="Rien a signaler par ici...">
+               <font>
+                  <Font name="Impact" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

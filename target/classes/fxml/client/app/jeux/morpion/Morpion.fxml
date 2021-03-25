@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pnl_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.jeux.morpion.CtrlMorpion">
+   <top>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="271.0" fitWidth="534.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Images/client/app/jeux/morpion/morpion.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl_message" alignment="CENTER" text="A qui de jouer ?" textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

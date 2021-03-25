@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="62.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Images/client/bienvenue.png" />
+         </image>
+      </ImageView>
+      <Label text="Pseudo">
+         <font>
+            <Font name="Impact" size="36.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#ff00e5" />
+                  <Stop color="#ff00e5" offset="0.22988505747126436" />
+                  <Stop color="#8600ff" offset="0.541138365525141" />
+                  <Stop color="#4400ff" offset="0.6336453766244023" />
+                  <Stop color="#00fff6" offset="0.8007662835249042" />
+                  <Stop color="#00fff6" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label text="Nombre de parties jouees : " textAlignment="CENTER">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="0">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+   </children>
+</VBox>

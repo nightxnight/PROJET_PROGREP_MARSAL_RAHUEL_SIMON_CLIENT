@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.salleattente.parametresjeu.CtrlParametresPendu">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <FlowPane alignment="CENTER_LEFT" prefHeight="50.0">
+         <children>
+            <Label text="Langue des mots : ">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="chbox_langue" prefWidth="150.0">
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+            </ChoiceBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </FlowPane>
+      <FlowPane alignment="CENTER_LEFT" prefHeight="50.0">
+         <children>
+            <Label text="Les erreurs mettent fin a la partie : ">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="cb_erreur" mnemonicParsing="false" scaleX="1.25" scaleY="1.25" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </FlowPane>
+   </children>
+</VBox>
