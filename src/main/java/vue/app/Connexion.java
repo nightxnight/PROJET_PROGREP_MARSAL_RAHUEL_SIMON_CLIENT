@@ -6,8 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import modele.serveur.stub.jeux.application.ResultatPartieEnum;
 import utils.composants.ConfirmationAlert;
 import utils.composants.ErrorAlert;
+import utils.composants.FinDePartieAlert;
 
 import java.rmi.RemoteException;
 
@@ -38,7 +40,5 @@ public class Connexion extends Application {
             System.exit(1);
         });
         stage.show();
-        new ConfirmationAlert("message").showAndWait();
-
     }
 }

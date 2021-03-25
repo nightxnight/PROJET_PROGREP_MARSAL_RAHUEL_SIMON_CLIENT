@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import utils.composants.FinDePartieAlert;
 
 import java.rmi.RemoteException;
 
@@ -138,8 +139,7 @@ public class CtrlAllumettes extends CtrlJeu {
             partieLance = false;
             activerComposants(partieLance);
             parent.getMapPane().remove("jeu");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, message, ButtonType.OK);
-            alert.showAndWait();
+            new FinDePartieAlert(resultat, message).showAndWait();
             parent.afficher("salleattente");
         });
     }

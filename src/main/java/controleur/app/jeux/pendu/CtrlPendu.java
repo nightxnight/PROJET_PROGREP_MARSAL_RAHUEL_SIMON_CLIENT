@@ -19,6 +19,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 
 import utils.composants.CustomButtonPendu;
+import utils.composants.FinDePartieAlert;
 
 import java.rmi.RemoteException;
 import java.util.HashMap;
@@ -145,10 +146,9 @@ public class CtrlPendu extends CtrlJeu {
         Platform.runLater(() -> {
             partieLance = false;
             activerComposants(partieLance);
-            lbl_proposition.setText("");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, message, ButtonType.OK);
-            alert.showAndWait();
+            lbl_proposition.setText("C'est finit!");
             parent.getMapPane().remove("jeu");
+            new FinDePartieAlert(resultat, message).showAndWait();
             parent.afficher("salleattente");
         });
     }
