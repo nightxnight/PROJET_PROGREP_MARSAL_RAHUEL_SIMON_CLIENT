@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
+import utils.composants.InformationAlert;
 
 public class CtrlMenuBar {
 
@@ -34,8 +35,9 @@ public class CtrlMenuBar {
             else parent.afficher("liste_salleattente");
         } else if (source.equals(btn_parametres)) parent.afficher("options");
         else if (source.equals(btn_apropos)) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Ce projet a ete developpe dans un cadre scolaire.\nPar messieurs MARSAL Remi, RAHUEL Victor et SIMON Marco en mars 2021.", ButtonType.OK);
-            alert.showAndWait();
+            InformationAlert apropos = new InformationAlert("Ce projet a ete developpe dans un cadre scolaire.\n" +
+                    "Equipe de developpement : MARSAL Remi, RAHUEL Victor,\nSIMON Marco - Mars 2021.");
+            apropos.showAndWait();
         }
     }
 

@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
+import utils.composants.ConfirmationAlert;
+import utils.composants.InformationAlert;
 import vue.app.Connexion;
 
 import java.rmi.RemoteException;
@@ -75,6 +77,9 @@ public class CtrlOptions {
     @FXML
     void appliquerChangements(MouseEvent event) {
         if (verifSaisie()) {
+            ConfirmationAlert confirmation = new ConfirmationAlert("Votre profil va etre modifie.\nEtes vous sur ?");
+            confirmation.showAndWait();
+            if (confirmation.getResult().equals(confirmation.getANNULER())) return;
             String mail = tf_mail.getText().trim();
             String ancienMotDePasse = pf_ancienmdp.getText().trim();
             String nouveauMotDePasse = pf_mdp.getText().trim();
@@ -141,15 +146,18 @@ public class CtrlOptions {
     }
 
     private void unThemeClairSerieux(){
-        Alert alert = new Alert(Alert.AlertType.WARNING,
-                "Il semble que vous n'allez pas bien. Veuillez contacter le SAMU au plus vite (Tel : 15)\nQui met un theme clair en 2021 serieux ?",
-                ButtonType.OK);
+        InformationAlert alert = new InformationAlert(
+                "Il semble que vous n'allez pas bien. Veuillez contacter le SAMU au plus vite (Tel : 15)\n" +
+                "Qui met un theme clair en 2021 serieux ?");
         alert.setHeaderText("Alerte information");
         alert.showAndWait();
     }
 
     @FXML
     void seDeconnecter(MouseEvent event) {
+        ConfirmationAlert confirmation = new ConfirmationAlert("Vous allez etre deconnecte.\nEtes vous sur ?");
+        confirmation.showAndWait();
+        if (confirmation.getResult().equals(confirmation.getANNULER())) return;
         try {
             session.logout();
             ((Stage) btn_deconnexion.getScene().getWindow()).close();

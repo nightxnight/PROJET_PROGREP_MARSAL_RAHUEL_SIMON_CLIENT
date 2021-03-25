@@ -11,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import utils.composants.ConfirmationAlert;
+import utils.composants.ErrorAlert;
 
 import java.rmi.RemoteException;
 
@@ -55,18 +57,17 @@ public class CtrlTemplateAmis {
     @FXML
     void SupprimerAmis(MouseEvent event) {
         try {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, joueur.getPseudo() + " va etre supprime de votre liste d'amis.\nEtes-vous sur ?", ButtonType.OK, ButtonType.CANCEL);
+            ConfirmationAlert alert = new ConfirmationAlert(joueur.getPseudo() + " va etre supprime de votre liste d'amis.\nEtes-vous sur ?");
             alert.showAndWait();
-            boolean valider = alert.getResult().equals(ButtonType.OK);
+            boolean valider = alert.getResult().equals(alert.getVALIDER());
             if (valider) {
                 portailAmis.supprimerAmis(this.pseudo, joueur.getPseudo());
                 parent.getMapPane().get("mesamis").getPremier().getChildren().remove(this.root);
             }
         } catch (IllegalArgumentException iae) {
-            //TODO afficher un label d'erreur
-            System.out.println(iae.getMessage());
+            new ErrorAlert(iae.getMessage()).showAndWait();
         } catch (RemoteException re) {
-            //TODO afficher pb de co;
+            new ErrorAlert("Un probleme de communication est survenue").showAndWait();
         }
     }
 

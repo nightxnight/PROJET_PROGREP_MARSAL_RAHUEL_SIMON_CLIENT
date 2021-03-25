@@ -13,7 +13,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import utils.composants.CustomPasswordDialog;
+import utils.composants.ErrorAlert;
 
+import java.rmi.RemoteException;
 import java.util.Optional;
 
 public class CtrlSalleAttenteTemplate {
@@ -80,9 +82,12 @@ public class CtrlSalleAttenteTemplate {
                 parent.getParent().afficher("salleattente");
             }
         } catch (IllegalArgumentException iae) {
-            System.out.println(iae.getMessage());
+            new ErrorAlert(iae.getMessage()).showAndWait();
+        } catch (RemoteException e) {
+            new ErrorAlert("Une erreur de communication est survenue.").showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
+            System.exit(1);
         }
     }
 }
