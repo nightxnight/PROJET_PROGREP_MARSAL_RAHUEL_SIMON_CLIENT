@@ -1,7 +1,7 @@
 package controleur.app.options;
 
 import controleur.app.CtrlPrincipal;
-import modele.serveur.stub.connexion.joueur.Joueur;
+import modele.implementation.connexion.joueur.Joueur;
 import modele.serveur.stub.connexion.session.SessionIF;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

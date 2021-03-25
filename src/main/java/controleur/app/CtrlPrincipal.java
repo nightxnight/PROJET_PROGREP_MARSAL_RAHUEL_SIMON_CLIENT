@@ -3,7 +3,7 @@ package controleur.app;
 import controleur.app.amis.CtrlListeAmis;
 import controleur.app.options.CtrlOptions;
 import controleur.app.salleattente.CtrlListeSalleAttente;
-import modele.serveur.stub.connexion.joueur.Joueur;
+import modele.implementation.connexion.joueur.Joueur;
 import modele.serveur.stub.connexion.session.SessionIF;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

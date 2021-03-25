@@ -1,7 +1,7 @@
 package modele.client.stub.amis;
 
-import modele.serveur.stub.amis.chat.Message;
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
+import modele.implementation.amis.chat.Message;
+import modele.implementation.connexion.joueur.JoueurProxy;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

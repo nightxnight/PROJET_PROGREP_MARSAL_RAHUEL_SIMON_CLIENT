@@ -1,6 +1,6 @@
 package modele.serveur.stub.salleattente;
 
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
+import modele.implementation.connexion.joueur.JoueurProxy;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

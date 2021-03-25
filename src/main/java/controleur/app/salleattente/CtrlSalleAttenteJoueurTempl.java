@@ -1,12 +1,12 @@
 package controleur.app.salleattente;
 
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import modele.implementation.connexion.joueur.JoueurProxy;
 
 public class CtrlSalleAttenteJoueurTempl {
 

@@ -1,8 +1,8 @@
 package controleur.app.amis.template;
 
 import controleur.app.amis.CtrlListeAmis;
+import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.amis.PortailAmisIF;
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

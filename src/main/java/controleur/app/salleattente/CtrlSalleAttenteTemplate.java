@@ -2,7 +2,7 @@ package controleur.app.salleattente;
 
 import modele.serveur.stub.salleattente.SalleAttenteIF;
 import modele.serveur.stub.salleattente.SalleAttenteProprietaireIF;
-import modele.serveur.stub.salleattente.SalleAttenteProxy;
+import modele.implementation.salleattente.SalleAttenteProxy;
 import modele.serveur.stub.salleattente.connecteur.ConnecteurSalleAttenteIF;
 import modele.implementation.salleattente.ListenerSalleAttente;
 

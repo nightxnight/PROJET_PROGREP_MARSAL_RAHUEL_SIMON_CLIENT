@@ -1,8 +1,8 @@
 package controleur.app.amis;
 
 import controleur.app.amis.template.CtrlTemplateDemande;
+import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.amis.PortailAmisIF;
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

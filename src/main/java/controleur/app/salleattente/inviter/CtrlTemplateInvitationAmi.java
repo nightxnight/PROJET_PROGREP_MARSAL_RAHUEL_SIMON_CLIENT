@@ -1,6 +1,6 @@
 package controleur.app.salleattente.inviter;
 
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
+import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.salleattente.SalleAttenteIF;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

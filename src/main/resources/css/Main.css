@@ -38,3 +38,6 @@
     -fx-scale-y: 1.1;
 }
 
+.scroll-pane {
+    -fx-background-color:transparent;
+}

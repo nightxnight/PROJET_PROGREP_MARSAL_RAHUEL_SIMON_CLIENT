@@ -1,7 +1,7 @@
 package controleur.app.salleattente.inviter;
 
+import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.amis.PortailAmisIF;
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.connexion.session.SessionIF;
 import modele.serveur.stub.salleattente.SalleAttenteIF;
 import javafx.fxml.FXML;

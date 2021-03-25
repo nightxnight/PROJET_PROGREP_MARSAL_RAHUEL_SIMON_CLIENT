@@ -2,8 +2,8 @@ package controleur.app.amis.chat;
 
 import controleur.app.CtrlPrincipal;
 import controleur.app.salleattente.CtrlSalleAttente;
+import modele.implementation.amis.chat.InvitationMessage;
 import modele.implementation.salleattente.ListenerSalleAttente;
-import modele.serveur.stub.amis.chat.InvitationMessage;
 import modele.serveur.stub.connexion.session.SessionIF;
 import modele.serveur.stub.salleattente.SalleAttenteIF;
 import modele.serveur.stub.salleattente.connecteur.ConnecteurSalleAttenteIF;

@@ -1,8 +1,8 @@
 package modele.serveur.stub.connexion.session;
 
 import modele.client.stub.amis.AmisListenerIF;
+import modele.implementation.connexion.joueur.Joueur;
 import modele.serveur.stub.amis.PortailAmisIF;
-import modele.serveur.stub.connexion.joueur.Joueur;
 import modele.serveur.stub.salleattente.connecteur.ConnecteurSalleAttenteIF;
 
 import java.rmi.Remote;

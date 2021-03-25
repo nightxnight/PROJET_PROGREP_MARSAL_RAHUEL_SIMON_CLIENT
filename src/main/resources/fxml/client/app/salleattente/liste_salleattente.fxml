@@ -6,6 +6,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -67,20 +68,6 @@
          </children>
       </GridPane>
    </top>
-   <center>
-      <VBox fx:id="vbox_salleattente" alignment="TOP_CENTER" BorderPane.alignment="TOP_CENTER">
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-         <children>
-            <Label fx:id="lbl_aucun_res" text="Aucun resultat">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </VBox>
-   </center>
    <bottom>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="300.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -144,4 +131,22 @@
          </children>
       </GridPane>
    </bottom>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="vbox_salleattente" alignment="TOP_CENTER">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label fx:id="lbl_aucun_res" text="Aucun resultat, il serait temps d'en creer une alors!">
+                     <font>
+                        <Font name="Impact" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
 </BorderPane>

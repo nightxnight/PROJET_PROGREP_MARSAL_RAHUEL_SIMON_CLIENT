@@ -1,11 +1,11 @@
 package controleur.app.amis.chat;
 
 import controleur.app.amis.CtrlListeAmis;
+import modele.implementation.amis.chat.InvitationMessage;
+import modele.implementation.amis.chat.Message;
+import modele.implementation.amis.chat.SimpleMessage;
+import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.amis.PortailAmisIF;
-import modele.serveur.stub.amis.chat.InvitationMessage;
-import modele.serveur.stub.amis.chat.Message;
-import modele.serveur.stub.amis.chat.SimpleMessage;
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

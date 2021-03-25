@@ -3,7 +3,7 @@ package modele.serveur.stub.salleattente.connecteur;
 import modele.client.stub.salleattente.ListenerSalleAttenteIF;
 import modele.serveur.stub.salleattente.SalleAttenteIF;
 import modele.serveur.stub.salleattente.SalleAttenteProprietaireIF;
-import modele.serveur.stub.salleattente.SalleAttenteProxy;
+import modele.implementation.salleattente.SalleAttenteProxy;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

@@ -3,8 +3,8 @@ package modele.implementation.amis;
 import controleur.app.amis.CtrlAmis;
 import controleur.app.amis.CtrlDemandeAmis;
 import controleur.app.amis.CtrlListeAmis;
-import modele.serveur.stub.amis.chat.Message;
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
+import modele.implementation.amis.chat.Message;
+import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.client.stub.amis.AmisListenerIF;
 
 import java.rmi.RemoteException;

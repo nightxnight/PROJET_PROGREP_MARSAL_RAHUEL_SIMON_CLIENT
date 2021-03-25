@@ -3,7 +3,7 @@ package controleur.app.salleattente;
 import controleur.app.CtrlPrincipal;
 import modele.serveur.stub.connexion.session.SessionIF;
 import modele.serveur.stub.jeux.application.JeuxEnum;
-import modele.serveur.stub.salleattente.SalleAttenteProxy;
+import modele.implementation.salleattente.SalleAttenteProxy;
 import modele.serveur.stub.salleattente.connecteur.ConnecteurSalleAttenteIF;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -67,6 +67,8 @@ public class CtrlListeSalleAttente implements Initializable {
             ArrayList<SalleAttenteProxy> listeSallesAttentes = connecteur.getListeSallesAttentes();
             for (SalleAttenteProxy salleAttenteProxy : listeSallesAttentes)
                 chargerTemplateSalleAttente(salleAttenteProxy);
+            if (listeSallesAttentes.size() == 0)
+                this.vbox_salleattente.getChildren().add(this.lbl_aucun_res);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -107,6 +109,8 @@ public class CtrlListeSalleAttente implements Initializable {
             ArrayList<SalleAttenteProxy> listeSallesAttentes = connecteur.rechercher(jeu, masquerPleine, masquerMdp);
             for (SalleAttenteProxy salleAttenteProxy : listeSallesAttentes)
                 chargerTemplateSalleAttente(salleAttenteProxy);
+            if (listeSallesAttentes.size() == 0)
+                vbox_salleattente.getChildren().add(this.lbl_aucun_res);
         } catch (RemoteException re) {
             System.out.println(re.getMessage());
         }

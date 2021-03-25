@@ -1,6 +1,6 @@
 package controleur.app.amis;
 
-import modele.serveur.stub.connexion.joueur.JoueurProxy;
+import modele.implementation.connexion.joueur.JoueurProxy;
 
 import java.util.ArrayList;
 
