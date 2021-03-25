@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.amis.CtrlDemandeAmis">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.CtrlDemandeAmis">
    <bottom>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER">
          <children>

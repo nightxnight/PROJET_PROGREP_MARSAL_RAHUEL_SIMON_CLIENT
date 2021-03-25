@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.amis.chat.CtrlChatAmis">
+<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.chat.CtrlChatAmis">
    <top>
       <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" BorderPane.alignment="CENTER">
          <children>

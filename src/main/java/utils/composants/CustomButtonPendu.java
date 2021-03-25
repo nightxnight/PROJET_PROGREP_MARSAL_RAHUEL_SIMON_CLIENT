@@ -1,6 +1,6 @@
 package utils.composants;
 
-import client.controleur.app.jeux.pendu.CtrlPendu;
+import controleur.app.jeux.pendu.CtrlPendu;
 import javafx.scene.control.Button;
 
 public class CustomButtonPendu extends Button {

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="800.0" prefWidth="800.0" stylesheets="@../../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.salleattente.CtrlListeSalleAttente">
+<BorderPane prefHeight="800.0" prefWidth="800.0" stylesheets="@../../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.salleattente.CtrlListeSalleAttente">
    <top>
       <GridPane BorderPane.alignment="CENTER">
          <columnConstraints>

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="BP_Login" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" stylesheets="@../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.CtrlMenuBar">
+<BorderPane fx:id="BP_Login" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" stylesheets="@../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.CtrlMenuBar">
    <top>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>

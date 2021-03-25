@@ -1,6 +1,6 @@
 package utils.composants;
 
-import client.controleur.app.jeux.morpion.CtrlMorpion;
+import controleur.app.jeux.morpion.CtrlMorpion;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;

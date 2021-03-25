@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane fx:id="pnl_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1100.0" stylesheets="@../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.CtrlPrincipal">
+<BorderPane fx:id="pnl_principal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1100.0" stylesheets="@../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.CtrlPrincipal">
    <bottom>
       <FlowPane alignment="CENTER_LEFT" prefHeight="30.0" BorderPane.alignment="CENTER">
          <children>

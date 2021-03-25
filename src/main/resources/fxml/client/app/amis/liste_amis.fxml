@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controleur.app.amis.CtrlListeAmis">
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.CtrlListeAmis">
    <top>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" BorderPane.alignment="CENTER">
          <columnConstraints>
