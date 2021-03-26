@@ -32,6 +32,9 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
+/*
+ * Controleur associe aux salles d'attentes lorsqu'on l'a rejoint.
+ */
 public class CtrlSalleAttente implements Initializable {
 
     private CtrlPrincipal parent;
@@ -97,6 +100,10 @@ public class CtrlSalleAttente implements Initializable {
         preparerPane();
     }
 
+    /*
+     * Charge les parametres de la salle d'attente (en les recuperant depuis le serveur)
+     * et actualise la valeur des differents composants
+     */
     private void preparerPane() {
         try {
             actualiserJoueur();
@@ -115,6 +122,9 @@ public class CtrlSalleAttente implements Initializable {
         mettreAJourProprietaire(this.droitsProprietaire);
     }
 
+    /*
+     * Cree la popup d'invitation des amis
+     */
     private void creerPaneInvitation() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/client/app/salleattente/inviteramis.fxml"));
@@ -132,21 +142,26 @@ public class CtrlSalleAttente implements Initializable {
         }
     }
 
+    /*
+     * Permet d'activer / desactiver les composants lorsqu'on est proprietaire
+     */
     private void mettreAJourProprietaire(SalleAttenteProprietaireIF droitsProprietaire) {
         this.droitsProprietaire = droitsProprietaire;
         mettreAjourPanelParametre(droitsProprietaire);
         if (parametresJeu != null) this.parametresJeu.getSecond().mettreAJourComposants(droitsProprietaire);
     }
 
+    /*
+     * Met a jour les composants des parametres lorsqu'on est proprietaire
+     */
     private void mettreAjourPanelParametre(SalleAttenteProprietaireIF droitsProprietaire) {
         boolean isProprietaire = droitsProprietaire != null;
-        chbox_jeu.setDisable(!isProprietaire);
-        sp_nb_joueur.setDisable(!isProprietaire);
-        pf_mdp.setDisable(!isProprietaire);
-        cb_prive.setDisable(!isProprietaire);
-        btn_appliquer.setDisable(!isProprietaire);
+        pnl_parametres.setDisable(isProprietaire);
     }
 
+    /*
+     * Actualise le panel des joueurs lors d'une connexion d'un autre joueur
+     */
     public void connexionJoueur(JoueurProxy joueur, boolean proprietaire, boolean active, boolean pret) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/client/app/salleattente/template_joueur_salleattente.fxml"));
@@ -160,6 +175,9 @@ public class CtrlSalleAttente implements Initializable {
         }
     }
 
+    /*
+     * Charge le panel des parametres de jeu correspondant
+     */
     private void changerJeu(String nomJeu) {
         chbox_jeu.getSelectionModel().select(JeuxEnum.fromNomJeu(nomJeu));
         String url = "/fxml/client/app/salleattente/parametresjeux/";
@@ -182,7 +200,7 @@ public class CtrlSalleAttente implements Initializable {
     }
 
     /*
-     * Methodes communes
+     * Methodes communes aux membres normaux de la salle d'attente
      */
 
     @FXML
@@ -209,6 +227,11 @@ public class CtrlSalleAttente implements Initializable {
         }
     }
 
+    /*
+     * Change l'etat de pas pret a pret et inversement
+     * desactive le panel des parametres pour ne pas les modifier
+     * en cours de lancement
+     */
     @FXML
     private void changerEtat(MouseEvent event) {
         try {
@@ -221,13 +244,16 @@ public class CtrlSalleAttente implements Initializable {
         }
     }
 
+    /*
+     * Ouvre la popup d'invitation
+     */
     @FXML
     private void inviter(MouseEvent event) {
         this.fenetreInvitation.showAndWait();
     }
 
     /*
-     * Methodes proprietaire
+     * Methodes accessibles uniquement au proprietaire
      */
 
     public void exclure(String pseudoAExclure) {
@@ -271,6 +297,9 @@ public class CtrlSalleAttente implements Initializable {
      * Methodes appelees par le serveur
      */
 
+    /*
+     * Actualise l'etat d'un joueur
+     */
     public void actualiserJoueur() {
         Platform.runLater(() -> {
             try {
@@ -285,13 +314,18 @@ public class CtrlSalleAttente implements Initializable {
         });
     }
 
-
+    /*
+     * permet au serveur d'informer que ce client est le nouveau proprietaire
+     */
     public void designerProprietaire(SalleAttenteProprietaireIF droitsProprietaire) {
         Platform.runLater(() -> {
             mettreAJourProprietaire(droitsProprietaire);
         });
     }
 
+    /*
+     * permet au serveur d'exclure un client de la salle d'attente
+     */
     public void exclure() {
         Platform.runLater(() -> {
             parent.getMapPane().remove("salleattente");
@@ -302,7 +336,9 @@ public class CtrlSalleAttente implements Initializable {
         });
     }
 
-
+    /*
+     * permet au serveur de notifier la connexion d'un joueur
+     */
     public void connexionJoueur(JoueurProxy joueur) {
         Platform.runLater(() -> {
             try {
@@ -313,6 +349,9 @@ public class CtrlSalleAttente implements Initializable {
         });
     }
 
+    /*
+     * permet au serveur de notifier la deconnexion d'un joueur
+     */
     public void deconnexionJoueur(String pseudo) {
         Platform.runLater(() -> {
             vBox_liste_joueur.getChildren().remove(mapJoueursPane.get(pseudo).getPremier());
@@ -320,12 +359,18 @@ public class CtrlSalleAttente implements Initializable {
         });
     }
 
+    /*
+     * Affichage un message dans la chat de salle d'attente
+     */
     public void afficherMessage(String message) {
         Platform.runLater(() -> {
             vBox_chat.getChildren().add(new Label(message));
         });
     }
 
+    /*
+     * Permet au serveur de desactiver le bouton pret si le nombre de joueur n'est pas valide pour lancer une partie
+     */
     public void activerPret(boolean active) {
         Platform.runLater(() -> {
             btn_pret.setDisable(!active); btn_annuler.setDisable(!active);
@@ -336,12 +381,19 @@ public class CtrlSalleAttente implements Initializable {
         });
     }
 
+    /*
+     * Actualise le changement d'etat d'un joueur
+     */
     public void changementEtat(String pseudoJoueur, boolean etat) {
         Platform.runLater(() -> {
             mapJoueursPane.get(pseudoJoueur).getSecond().changerEtat(etat);
         });
     }
 
+    /*
+     * Permet de modifier un composants en fonction du nom de la propriete et de la valeur
+     * passer en parametre
+     */
     public void changerParametresSalle(String nom, Object valeur) throws ClassCastException, IllegalArgumentException{
         Platform.runLater(() -> {
             switch(nom) {
@@ -369,12 +421,22 @@ public class CtrlSalleAttente implements Initializable {
         });
     }
 
+    /*
+     * indique au client qu'un parametre de jeu est change
+     */
     public void changerParametresJeu(String nom, Object valeur) {
         Platform.runLater(() -> {
             parametresJeu.getSecond().changerParametre(nom, valeur);
         });
     }
 
+    /*
+     * permet au serveur de notifier au client que la partie se lance
+     * le client chargera le panel correspondant a la valeur de JeuxEnum
+     * le connecteur renverra une interface correspondant au jeu grace
+     * a un heritage des interfaces, l'implementation cote serveur est egalement
+     * creer a partir de JeuxEnum grace a un heritage des implementations.
+     */
     public void rejoindrePartie(ConnecteurJeuxIF connecteur, JeuxEnum jeu) {
         Platform.runLater(() -> {
             try {

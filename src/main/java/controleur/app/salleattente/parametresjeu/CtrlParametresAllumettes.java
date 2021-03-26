@@ -10,6 +10,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
+/*
+ * controleur associe au parametre des allumettes
+ */
 public class CtrlParametresAllumettes extends CtrlParametresJeux implements Initializable {
 
     /*

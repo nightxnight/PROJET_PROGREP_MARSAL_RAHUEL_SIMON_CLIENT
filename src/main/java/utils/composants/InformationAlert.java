@@ -6,6 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+/*
+ * Alerte d'information personnalise
+ */
 public class InformationAlert extends Alert {
 
     public InformationAlert(String message) {

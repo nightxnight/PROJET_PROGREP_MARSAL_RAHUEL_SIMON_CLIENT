@@ -5,7 +5,8 @@ import vue.app.Connexion;
 public class Launcher {
 
     /*
-     * Classe qui permettera de lancer l'application
+     * Classe permettant de lancer l'application sans passer de parametres
+     * la JVM
      */
 
     public static void main(String[] args) {

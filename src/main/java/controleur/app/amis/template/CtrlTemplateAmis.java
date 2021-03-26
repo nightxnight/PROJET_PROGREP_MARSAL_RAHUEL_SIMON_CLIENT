@@ -16,6 +16,10 @@ import utils.composants.ErrorAlert;
 
 import java.rmi.RemoteException;
 
+/*
+ * Un template d'amis permet de representer un amis dans la liste
+ * des amis.
+ */
 public class CtrlTemplateAmis {
 
     private CtrlListeAmis parent;
@@ -54,6 +58,10 @@ public class CtrlTemplateAmis {
         else iv_status.setImage(deconnecte);
     }
 
+    /*
+     * Une popup de confirmation s'ouvre, si celle ci est
+     * valider alors on demande au serveur de supprimer cette amis
+     */
     @FXML
     void SupprimerAmis(MouseEvent event) {
         try {

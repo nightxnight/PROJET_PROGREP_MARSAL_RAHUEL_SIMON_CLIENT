@@ -6,6 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+/*
+ * Alerte de confirmation personnalise
+ */
 public class ConfirmationAlert extends Alert {
 
     private final ButtonType VALIDER = new ButtonType("Valider");

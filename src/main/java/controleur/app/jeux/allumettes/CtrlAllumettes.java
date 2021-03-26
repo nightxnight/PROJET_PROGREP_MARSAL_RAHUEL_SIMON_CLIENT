@@ -2,6 +2,7 @@ package controleur.app.jeux.allumettes;
 
 import controleur.app.CtrlPrincipal;
 import controleur.app.jeux.CtrlJeu;
+import javafx.scene.paint.Paint;
 import modele.implementation.jeux.JeuxListener;
 import modele.implementation.jeux.allumettes.AllumettesListener;
 import modele.serveur.stub.jeux.application.JeuxIF;
@@ -18,6 +19,9 @@ import utils.composants.FinDePartieAlert;
 
 import java.rmi.RemoteException;
 
+/*
+ * Controleur associe au jeu des allumettes
+ */
 public class CtrlAllumettes extends CtrlJeu {
 
     private String pseudo;
@@ -59,6 +63,10 @@ public class CtrlAllumettes extends CtrlJeu {
         this.jeu = (AllumettesIF) jeuxIF;
     }
 
+    /*
+     * Affiche un nombre x d'allumettes en fonction du nombre
+     * choisit par le serveur
+     */
     private void creerAllumettes(int nbAllumettes) {
         for(int i = 0; i < nbAllumettes; i++) {
             ImageView iv = new ImageView(img_allumettes);
@@ -77,6 +85,10 @@ public class CtrlAllumettes extends CtrlJeu {
     }
 
     // Fonctions de jeu
+    /*
+     * Demande au serveur de retirer x allumettes.
+     * spinner_nb_allumettes contient la valeur qui sera retirer.
+     */
     @FXML
     private void prendre_allumettes(MouseEvent event) {
         if(!peutJouer || !partieLance) return;
@@ -85,8 +97,13 @@ public class CtrlAllumettes extends CtrlJeu {
 
         try {
             jeu.prendreAllumettes(pseudo, nbAllumettes);
+            lbl_pris.setTextFill(Paint.valueOf("#000000"));
         } catch (RemoteException re) {
             System.out.println(re.getMessage());
+        } catch (IllegalArgumentException iae) {
+            lbl_pris.setTextFill(Paint.valueOf("#FF0000"));
+            lbl_pris.setText(iae.getMessage());
+            return;
         }
 
         peutJouer = false;
@@ -97,6 +114,9 @@ public class CtrlAllumettes extends CtrlJeu {
      * Fonctions appelees par le serveur
      */
 
+    /*
+     * Permet de recuperer les parametres de jeu
+     */
     public void recupererParametres(int nbAllumettesInitial, int nbAllumettesMaxTour) {
         Platform.runLater(() -> {
             this.nbAllumettesInitial = nbAllumettesInitial;
@@ -105,12 +125,20 @@ public class CtrlAllumettes extends CtrlJeu {
         });
     }
 
+    /*
+     * Actualise le nombre d'allumettes retirable max si
+     * le nombre d'allumettes retirable en 1 tour < nombre d'allumettes restante
+     */
     public void actualiserNombreMaxAllumettesTour(int nombre) {
         Platform.runLater(() -> {
             this.spinner_nb_allumettes.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, nombre, 1));
         });
     }
 
+    /*
+     * Retire un nombre x d'allumettes des allumettes restantes et
+     * indique aux joueurs qui a pris les allumettes
+     */
     public void retirerAllumettes(String pseudoPreneur, int nbAllumettes, String message) {
         Platform.runLater(() -> {
             for(int i = 1; i <= nbAllumettes; i++) {

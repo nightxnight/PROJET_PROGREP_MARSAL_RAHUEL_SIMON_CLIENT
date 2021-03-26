@@ -3,6 +3,9 @@ package utils.composants;
 import controleur.app.jeux.pendu.CtrlPendu;
 import javafx.scene.control.Button;
 
+/*
+ * Bouton personnalise pour afficher les lettres au pendu
+ */
 public class CustomButtonPendu extends Button {
 
     public CustomButtonPendu (char lettre, CtrlPendu controleur) {

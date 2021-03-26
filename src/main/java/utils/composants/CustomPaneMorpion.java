@@ -12,6 +12,9 @@ import javafx.util.Pair;
 
 import java.util.HashMap;
 
+/*
+ * Panel personnalise permettant de genere un morpion de taille x
+ */
 public class CustomPaneMorpion extends GridPane {
 
     private CtrlMorpion controleur;

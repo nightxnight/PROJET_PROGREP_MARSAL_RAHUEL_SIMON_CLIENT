@@ -23,6 +23,9 @@ import utils.composants.FinDePartieAlert;
 
 import java.rmi.RemoteException;
 
+/*
+ * Controleur du jeu du morpion
+ */
 public class CtrlMorpion extends CtrlJeu {
 
     String pseudo;
@@ -72,7 +75,10 @@ public class CtrlMorpion extends CtrlJeu {
     }
 
     // Fonctions de jeu.
-
+    /*
+     * Permet d'indiquer au serveur que l'on souhaite bloquer une case de position x y
+     * Le label d'erreur se mettera a jour si une erreur est leve
+     */
     public void bloquerCase(int ligne, int col) {
         if(!peutJouer || !partieLance) return;
         lbl_message.setTextFill(Paint.valueOf("#FFFFFF"));
@@ -112,6 +118,10 @@ public class CtrlMorpion extends CtrlJeu {
         });
     }
 
+    /*
+     * Recupere les parametres du morpion est initialise un CustomPaneMorpion
+     * de taille personnalise.
+     */
     public void recupererParametres(int tailleTableauServeur, char symboleServeur) {
         Platform.runLater(() -> {
             tailleTableau = tailleTableauServeur;
@@ -122,6 +132,9 @@ public class CtrlMorpion extends CtrlJeu {
         });
     }
 
+    /*
+     * Recupere case bloque par un jour et la met a jour
+     */
     public void recupererCaseBloque(int ligne, int colonne, char symbole) {
         Platform.runLater(() -> {
             gp_morpion.getMapIv().get(new Pair<Integer, Integer>(ligne, colonne)).setImage((symbole == 'X') ? croix : rond);

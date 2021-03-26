@@ -7,6 +7,9 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import modele.serveur.stub.jeux.application.ResultatPartieEnum;
 
+/*
+ * Alerte de fin de partie personnalise
+ */
 public class FinDePartieAlert extends Alert {
 
     private Image gagne = new Image("./Images/client/app/alert/gagne.png");

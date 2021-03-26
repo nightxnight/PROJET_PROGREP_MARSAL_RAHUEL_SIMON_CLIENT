@@ -10,6 +10,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
+/*
+ * controleur associe aux parametres du morpion
+ */
 public class CtrlParametresMorpion extends CtrlParametresJeux implements Initializable {
 
 

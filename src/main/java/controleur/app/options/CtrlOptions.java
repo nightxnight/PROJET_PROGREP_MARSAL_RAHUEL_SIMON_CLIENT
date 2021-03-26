@@ -17,6 +17,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.regex.Pattern;
 
+/*
+ * controleur des options permettant de modifier son profil
+ * sur le serveur / se deconnecter
+ */
 public class CtrlOptions {
 
     private CtrlPrincipal parent;
@@ -24,7 +28,7 @@ public class CtrlOptions {
     private String pseudo;
     private SessionIF session;
 
-    private final static DateTimeFormatter formateur = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private final static DateTimeFormatter formateur = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Format la date au format francais
 
     /*
      * Composants FXML
@@ -73,7 +77,11 @@ public class CtrlOptions {
         this.lbl_erreur_modif.setText("");
     }
 
-
+    /*
+     * Demande au serveur de modifier les informations du profil du joueur
+     * Le label d'erreur generale se met a jour si une erreur est leve /
+     * si cela s'est bien passe.
+     */
     @FXML
     void appliquerChangements(MouseEvent event) {
         if (verifSaisie()) {
@@ -103,6 +111,10 @@ public class CtrlOptions {
         }
     }
 
+    /*
+     * Permet de verifier la saisie de l'utilisateur et par consequent
+     * de mettre a jour les labels d'erreurs si il y a erreur de saisie.
+     */
     private boolean verifSaisie(){
         boolean saisieValide = true;
 
@@ -145,6 +157,10 @@ public class CtrlOptions {
         return saisieValide;
     }
 
+    /*
+     * C'est une blague en vue du temps qu'on a passe derriere nos IDE.
+     * Imaginez l'etat de nos yeux avec un fond blanc (:
+     */
     private void unThemeClairSerieux(){
         InformationAlert alert = new InformationAlert(
                 "Il semble que vous n'allez pas bien. Veuillez contacter le SAMU au plus vite (Tel : 15)\n" +
@@ -153,6 +169,9 @@ public class CtrlOptions {
         alert.showAndWait();
     }
 
+    /*
+     * Permet de se deconnecter du serveur et ainsi retourner au panel de connexion
+     */
     @FXML
     void seDeconnecter(MouseEvent event) {
         ConfirmationAlert confirmation = new ConfirmationAlert("Vous allez etre deconnecte.\nEtes vous sur ?");

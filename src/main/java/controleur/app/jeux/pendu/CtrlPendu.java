@@ -25,6 +25,9 @@ import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
+/*
+ * controleur du jeu du pendu
+ */
 public class CtrlPendu extends CtrlJeu {
 
     private String pseudo;
@@ -44,14 +47,13 @@ public class CtrlPendu extends CtrlJeu {
     /*
      * Composants FXML
      */
-
     @FXML private Label lbl_proposition;
     @FXML private GridPane gp_lettres;
     @FXML private TextField tf_mot;
     @FXML private ImageView iv_pendu;
     @FXML private Label lbl_mot;
 
-    private HashMap<Character, CustomButtonPendu> mapBouton;
+    private HashMap<Character, CustomButtonPendu> mapBouton; // Permet de stocker les boutons indexes par leur lettre correspondante
 
     @Override
     public void initialiser(CtrlPrincipal parent, String pseudo, JeuxListener listener) {
@@ -69,6 +71,9 @@ public class CtrlPendu extends CtrlJeu {
         this.jeu = (PenduIF) jeuxIF;
     }
 
+    /*
+     * Cree les boutons pour chaque lettre de l'alphabet
+     */
     private void creerBoutonsLettre() {
         this.mapBouton = new HashMap<Character, CustomButtonPendu>();
         char lettre = 'A';
@@ -99,22 +104,35 @@ public class CtrlPendu extends CtrlJeu {
     }
 
     // Fonctions de jeu
+    /*
+     * Permet de proposer une lettre au serveur
+     * Le label de proposition se mettera a jour si une erreur est leve (Pas a ce joueur de jouer)
+     */
     public void proposerLettre(char lettre) {
         if(!peutJouer || !partieLance) return;
-
+        lbl_proposition.setTextFill(Paint.valueOf("#000000"));
         try {
             jeu.proposerLettre(pseudo, lettre);
         } catch (RemoteException re) {
             System.out.println(re.getMessage());
+        } catch (IllegalArgumentException iae) {
+            lbl_proposition.setTextFill(Paint.valueOf("#E50000"));
+            lbl_proposition.setText(iae.getMessage());
+            return;
         }
 
         peutJouer = false;
         activerComposants(peutJouer);
     }
 
+    /*
+     * Propose un mot au serveur, on ne peut pas proposer le mot vide.
+     * Le label de proposition est mis a jour si une erreur est leve.
+     */
     private void proposerMot(){
         if(!peutJouer || !partieLance) return;
 
+        lbl_proposition.setTextFill(Paint.valueOf("#000000"));
         String proposition = tf_mot.getText().trim().toUpperCase();
         if (proposition.equals("") || !Pattern.matches("[A-Z]+", proposition)) {
             lbl_proposition.setText("La saisie n'est pas valide.");
@@ -125,6 +143,10 @@ public class CtrlPendu extends CtrlJeu {
             jeu.proposerMot(pseudo, proposition);
         } catch (RemoteException re) {
             System.out.println(re.getMessage());
+        } catch (IllegalArgumentException iae) {
+            lbl_proposition.setTextFill(Paint.valueOf("#E50000"));
+            lbl_proposition.setText(iae.getMessage());
+            return;
         }
 
         peutJouer = false;
@@ -153,6 +175,9 @@ public class CtrlPendu extends CtrlJeu {
         });
     }
 
+    /*
+     * Recupere le mot a jour si une lettre a ete trouve, indique qui l'a propose
+     */
     public void recupererMot(char[] mot, boolean valide, String message) {
         Platform.runLater(() -> {
             lbl_mot.setText(String.valueOf(mot));
@@ -166,6 +191,9 @@ public class CtrlPendu extends CtrlJeu {
         });
     }
 
+    /*
+     * Desactive un bouton de lettre si celle ci a ete propose, indique qu'il l'a propose
+     */
     public void recupererLettrePropose(char lettre, boolean valide, String message) {
         Platform.runLater(() -> {
             mapBouton.get(lettre).desactiver(valide);
@@ -179,6 +207,9 @@ public class CtrlPendu extends CtrlJeu {
         });
     }
 
+    /*
+     * Actualise l'image du pendu si un joueur commet une erreur
+     */
     public void actualiserErreur(int nbErreur) {
         Platform.runLater(() -> {
             try {

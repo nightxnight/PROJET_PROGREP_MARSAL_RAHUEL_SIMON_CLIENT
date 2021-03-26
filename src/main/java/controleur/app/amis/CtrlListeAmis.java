@@ -26,6 +26,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
+/*
+ * Permet de gerer la liste des amis, d'ouvrir le chat correspondant
+ * les supprimer de la liste, etc, ...
+ */
 public class CtrlListeAmis extends CtrlAmis {
 
     private CtrlPrincipal parent;
@@ -88,6 +92,9 @@ public class CtrlListeAmis extends CtrlAmis {
             ajouterAmis(ami);
     }
 
+    /*
+     * Ouvre le chat correspondant a un amis sur le bord droit
+     */
     private void creerChat(JoueurProxy joueur) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/client/app/amis/amis_chat.fxml"));
@@ -100,6 +107,9 @@ public class CtrlListeAmis extends CtrlAmis {
         }
     }
 
+    /*
+     * Permet de basculer entre la liste des amis / liste des demandes
+     */
     @FXML
     void changerPage(MouseEvent event) {
         if(event.getSource().equals(btn_mesamis)) {
@@ -109,6 +119,9 @@ public class CtrlListeAmis extends CtrlAmis {
         }
     }
 
+    /*
+     * Effectue une recherche des amis
+     */
     @FXML
     void rechercherAmis(MouseEvent event) {
         try {
@@ -123,6 +136,9 @@ public class CtrlListeAmis extends CtrlAmis {
      * Fonctions appeles par le serveur
      */
 
+    /*
+     * Permet de recuperer un amis directement si une demande est accepter.
+     */
     public void ajouterAmis(JoueurProxy joueurProxy) {
         Platform.runLater(() -> {
             lbl_vide.setVisible(false);
@@ -140,6 +156,9 @@ public class CtrlListeAmis extends CtrlAmis {
         });
     }
 
+    /*
+     * Permet de faire supprimer un amis de la liste si celui ci / vous, le supprime
+     */
     public void supprimerAmis(JoueurProxy joueurProxy) {
         Platform.runLater(() -> {
             try {
@@ -152,12 +171,19 @@ public class CtrlListeAmis extends CtrlAmis {
         });
     }
 
+    /*
+     * Permet de transferer un message directement a un chat
+     * Le type de message est traiter dans le controleur de chat prive.
+     */
     public void recupererMessage(String de, Message message) {
         Platform.runLater(() -> {
             mapChat.get(de).getSecond().recupererMessage(message);
         });
     }
 
+    /*
+     * Met a jour l'etat d'un amis, c'est a dire si il est en ligne / hors ligne
+     */
     public void actualiserEtat(String joueur, boolean etat) {
         Platform.runLater(() -> {
             mapTemplateAmis.get(joueur).getSecond().actualiserEtat(etat);

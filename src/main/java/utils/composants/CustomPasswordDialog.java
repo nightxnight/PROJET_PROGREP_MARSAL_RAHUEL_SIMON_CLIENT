@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 /*
  * Code par drguildo, lien github : https://github.com/drguildo
  * ->
- * Permet de creer une fenetre de dialog destine a la saisie de mot de passe.
+ * Permet de creer une popup destine a la saisie de mot de passe.
  *
  */
 

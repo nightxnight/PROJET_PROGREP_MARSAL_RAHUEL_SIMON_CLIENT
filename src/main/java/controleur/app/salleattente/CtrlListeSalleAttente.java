@@ -21,6 +21,9 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/*
+ * controleur gerant la liste des salles d'attentes
+ */
 public class CtrlListeSalleAttente implements Initializable {
 
     private CtrlPrincipal parent;
@@ -60,6 +63,9 @@ public class CtrlListeSalleAttente implements Initializable {
         actualiser(null);
     }
 
+    /*
+     * Actualise la liste des salles d'attentes sans filtres
+     */
     @FXML
     private void actualiser(MouseEvent event) {
         this.vbox_salleattente.getChildren().clear();
@@ -74,6 +80,9 @@ public class CtrlListeSalleAttente implements Initializable {
         }
     }
 
+    /*
+     * charge un template de salle d'attente et le parametre
+     */
     private  void chargerTemplateSalleAttente(SalleAttenteProxy salleAttenteProxy) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/client/app/salleattente/template_salleattente.fxml"));
@@ -85,7 +94,9 @@ public class CtrlListeSalleAttente implements Initializable {
         }
     }
 
-
+    /*
+     * permet d'afficher le controleur de creation de salle d'attente
+     */
     @FXML
     private void creer_salleattente(MouseEvent event) {
         try {
@@ -99,6 +110,11 @@ public class CtrlListeSalleAttente implements Initializable {
         }
     }
 
+    /*
+     * permet de filtrer les resultats en fonction des valeurs de chbox_jeu,
+     * cb_pleine, cb_mdp
+     * Fait le lien avec le panel de la liste des jeux pour faire une recherche en fonction d'un jeu specifique
+     */
     @FXML
     void rechercher(MouseEvent event) {
         rechercher(chbox_jeu.getValue(), cb_pleine.isSelected(), cb_mdp.isSelected());

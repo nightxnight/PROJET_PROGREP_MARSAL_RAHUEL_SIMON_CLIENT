@@ -14,6 +14,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+/*
+ * controleur de la creation de salle d'attente
+ */
 public class CtrlCreationSalleAttente {
 
     private CtrlPrincipal parent;
@@ -35,7 +38,18 @@ public class CtrlCreationSalleAttente {
         lbl_erreur.setText("");
     }
 
-
+    /*
+     * Cree une salle d'attente en fonction des valeurs
+     * de tf_nom_salle, pf_mdp et cb_publique
+     * Le label d'erreur est mis a jour si la saisie est invalide
+     * / une erreur est leve
+     *
+     * On obtiendra donc une interface proprietaire (pour executer les fonctions
+     * proprietaire) et une interface de salle d'attente classique (celle commune
+     * aux joueurs normaux dans la salle d'attente)
+     *
+     * Le panel de salle d'attente sera donc charger et initialiser
+     */
     @FXML
     void creer_salleattente(MouseEvent event) {
         String nomSalle = tf_nom_salle.getText().trim();
@@ -66,6 +80,9 @@ public class CtrlCreationSalleAttente {
         }
     }
 
+    /*
+     * Retour au liste des salles d'attentes
+     */
     @FXML
     void retour_liste(MouseEvent event) {
         parent.afficher("liste_salleattente");

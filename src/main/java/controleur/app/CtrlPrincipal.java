@@ -44,6 +44,9 @@ public class CtrlPrincipal {
         }
     }
 
+    /*
+     * Charge la barre de menu
+     */
     private void chargerMenuBar() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/client/app/menubar.fxml"));
@@ -56,6 +59,10 @@ public class CtrlPrincipal {
         this.pnl_principal.setLeft(pnl_menu);
     }
 
+    /*
+     * Charge le FXML de tous les onglets et les parametres
+     * en fonction de la session et du pseudo.
+     */
     private void chargerOnglets() {
         this.mapPane = new HashMap<String, Pane>();
         try {
@@ -106,22 +113,13 @@ public class CtrlPrincipal {
         return new FXMLLoader(getClass().getResource("/fxml/client/app/" + chemin));
     }
 
+    /*
+     * Permet d'afficher un panel parmis ceux qu'on a charge, ils sont stocke dans
+     * une table de hachage
+     */
     public void afficher(String nomPane) {
         this.pnl_principal.setCenter(mapPane.get(nomPane));
         this.lbl_fil_ariane.setText("> " + nomPane);
-    }
-
-    public void ouvrirAPropos(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("A propos");
-        alert.setHeaderText("A propos");
-        String s ="Ce projet à été réalisé par Rémi Marsal, Victor Rahuel et Marco Simon";
-        alert.setContentText(s);
-
-        DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add("css/Main.css");
-
-        alert.show();
     }
 
     public HashMap<String, Pane> getMapPane() {

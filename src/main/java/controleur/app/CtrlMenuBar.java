@@ -7,6 +7,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import utils.composants.InformationAlert;
 
+/*
+ * Controleur de la barre de menu
+ */
 public class CtrlMenuBar {
 
     CtrlPrincipal parent;
@@ -21,6 +24,9 @@ public class CtrlMenuBar {
     @FXML private ButtonBar btn_parametres;
     @FXML private ButtonBar btn_accueil;
 
+    /*
+     * Affiche l'onglet correspondant au bouton clique
+     */
     @FXML
     public void changerOnglet(MouseEvent event) {
         ButtonBar source = (ButtonBar) event.getSource();

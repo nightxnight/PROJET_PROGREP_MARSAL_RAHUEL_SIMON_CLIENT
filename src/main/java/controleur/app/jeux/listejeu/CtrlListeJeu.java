@@ -11,6 +11,13 @@ import modele.serveur.stub.jeux.application.JeuxEnum;
 
 import java.util.ArrayList;
 
+/*
+ * Permet d'afficher la liste des jeux disponible sur le serveur
+ * Si l'on clique sur un jeu alors on sera ramener au panel des salles
+ * d'attente et on recherchera uniquement les salles d'attentes qui jouent a
+ * ce jeu.
+ */
+
 public class CtrlListeJeu {
 
     private CtrlPrincipal parent;
@@ -28,6 +35,9 @@ public class CtrlListeJeu {
         initialiserComposants();
     }
 
+    /*
+     * Cree les panels de jeu en fonction de l'enumeration JeuxEnum
+     */
     private void initialiserComposants() {
         ArrayList<JeuxEnum> listeJeux = JeuxEnum.getListeJeu();
         for (JeuxEnum jeu : listeJeux) {

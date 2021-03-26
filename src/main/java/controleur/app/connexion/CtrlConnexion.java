@@ -45,6 +45,11 @@ public class CtrlConnexion implements Initializable {
 
     }
 
+    /*
+     * Permet de recuperer l'interface qui permet de se connecter et par consequent
+     * obtenir une session / acceder au reste de l'application
+     * Initialise egalement panel d'inscription
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -61,11 +66,19 @@ public class CtrlConnexion implements Initializable {
         }
     }
 
+    /*
+     * Permet de basculer sur le panel d'inscription
+     */
     @FXML
     void allerInscription(MouseEvent event) {
         this.root.setCenter(pnl_inscription);
     }
 
+    /*
+     * Permet d'appeler une methode sur le connecteur afin
+     * d'obtenir une session. Le label d'erreur se met a jour
+     * si une erreur est leve.
+     */
     @FXML
     void seConnecter(MouseEvent event) {
         String pseudo = tf_utilisateur.getText().trim();
@@ -90,6 +103,9 @@ public class CtrlConnexion implements Initializable {
         }
     }
 
+    /*
+     * Permet de lancer l'application principal
+     */
     public void ouvrirApplication(Stage ancienneFenetre, String pseudo, SessionIF session) {
         try {
             new App(session, pseudo);

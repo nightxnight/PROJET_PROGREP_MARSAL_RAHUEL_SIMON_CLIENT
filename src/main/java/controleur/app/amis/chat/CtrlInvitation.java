@@ -16,6 +16,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
+/*
+ * Les invitations permettent d'inviter un amis dans une  salle  d'attente.
+ * Cela permet de rendre une salle prive, c'est a dire qu'elle n'apparaitra
+ * pas dans la liste des salles d'attentes.
+ */
 public class CtrlInvitation {
 
     private CtrlPrincipal ctrlPrincipal;
@@ -47,6 +52,13 @@ public class CtrlInvitation {
         this.lbl_message.setText(invitation.getContenu());
     }
 
+    /*
+     * Charge le FXML de la salle d'attente
+     * Cree un listener de salle d'attente
+     * Initialise Le controleur de salle d'attente
+     * Supprime l'invitation
+     * Affiche le panel de salle d'attente
+     */
     @FXML
     void rejoindresalle(MouseEvent event) {
         try {

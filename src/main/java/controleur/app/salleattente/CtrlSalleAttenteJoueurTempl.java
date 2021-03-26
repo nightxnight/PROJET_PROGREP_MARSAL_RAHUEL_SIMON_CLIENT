@@ -8,6 +8,12 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import modele.implementation.connexion.joueur.JoueurProxy;
 
+/*
+ * controleur des templates des joueurs dans
+ * la salle d'attente.
+ * Ils permettent a un joueur de connaitre les autres
+ * joueurs present dans la salle d'attente.
+ */
 public class CtrlSalleAttenteJoueurTempl {
 
     CtrlSalleAttente parent;
@@ -33,6 +39,9 @@ public class CtrlSalleAttenteJoueurTempl {
         changerEtat(pret);
     }
 
+    /*
+     * Permet de changer la couleur du cercle representant le status d'un joueur (pret / pas pret)
+     */
     public void changerEtat(boolean pret) {
         if(pret) circle_pret.fillProperty().setValue(Paint.valueOf("#00ff00"));
         else circle_pret.fillProperty().setValue(Paint.valueOf("#ff0000"));

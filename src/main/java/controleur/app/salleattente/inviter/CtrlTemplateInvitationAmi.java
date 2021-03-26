@@ -39,11 +39,14 @@ public class CtrlTemplateInvitationAmi {
         this.lbl_pseudo.setText(joueur.getPseudo());
     }
 
+    /*
+     * permet de demande au serveur d'envoyer une invitation de salle d'attente dans
+     * le chat d'un amis
+     */
     @FXML
     void inviterAmi(MouseEvent event) {
         try {
             salleAttente.inviterAmi(this.pseudo, joueur.getPseudo());
-            parent.getvBox_amis().getChildren().remove(this.root);
             if(parent.getvBox_amis().getChildren().size() == 1) parent.getLbl_vide().setVisible(true);
             Stage stage = (Stage) parent.getvBox_amis().getScene().getWindow();
             stage.close();

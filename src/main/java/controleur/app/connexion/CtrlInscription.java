@@ -57,11 +57,19 @@ public class CtrlInscription {
         lbl_erreur.setText("");
     }
 
+    /*
+     * Bascule sur le panel de connexion
+     */
     @FXML
     void retourConnexion(MouseEvent event) {
         this.parent.getRoot().setCenter(pnl_connexion);
     }
 
+    /*
+     * Permet de creer un compte sur le serveur,
+     * une session sera recupere si il n'y a aucun
+     * probleme sinon le label d'erreur sera mis a jour
+     */
     @FXML
     void seInscrire(MouseEvent event) {
         boolean saisieValide = verifSaisie();
@@ -87,6 +95,10 @@ public class CtrlInscription {
         }
     }
 
+    /*
+     * Permet de verifier que tous les champs sont remplis correctement
+     * met a jour les labels d'erreurs correspondant si une erreur est presente
+     */
     private boolean verifSaisie() {
         boolean saisieValide = true;
 

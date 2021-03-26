@@ -11,6 +11,9 @@ import javafx.scene.layout.GridPane;
 
 import java.rmi.RemoteException;
 
+/*
+ * Permet de representer une demande en amis
+ */
 public class CtrlTemplateDemande {
 
     private CtrlDemandeAmis parent;
@@ -38,6 +41,9 @@ public class CtrlTemplateDemande {
         this.lbl_nom.setText(joueurProxy.getPseudo());
     }
 
+    /*
+     * Permet d'accepter / refuser une demande d'amis
+     */
     @FXML
     private void traiterDemande(MouseEvent event) {
         try {

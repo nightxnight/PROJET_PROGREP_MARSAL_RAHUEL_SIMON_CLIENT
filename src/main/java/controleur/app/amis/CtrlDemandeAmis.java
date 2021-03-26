@@ -1,6 +1,7 @@
 package controleur.app.amis;
 
 import controleur.app.amis.template.CtrlTemplateDemande;
+import javafx.scene.paint.Paint;
 import modele.implementation.connexion.joueur.JoueurProxy;
 import modele.serveur.stub.amis.PortailAmisIF;
 import javafx.application.Platform;
@@ -17,6 +18,9 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+ * Gere la liste des demandes d'amis
+ */
 public class CtrlDemandeAmis extends CtrlAmis {
 
     private CtrlListeAmis parent;
@@ -47,6 +51,11 @@ public class CtrlDemandeAmis extends CtrlAmis {
         this.lbl_erreur.setText("");
     }
 
+    /*
+     * Permet d'envoyer une demande d'amis au pseudo entrer dans tf_ajout
+     * Le label d'erreur se mettera a jour si une erreur d'arguments est
+     * lever. Sinon si cela s'est bien passe
+     */
     @FXML
     void ajoutAmis(MouseEvent event) {
         if(tf_ajout.getText().trim().equals("")) {
@@ -54,7 +63,10 @@ public class CtrlDemandeAmis extends CtrlAmis {
         }  else {
             try {
                 portailAmis.demandeAmis(this.pseudo, tf_ajout.getText().trim());
+                lbl_erreur.setTextFill(Paint.valueOf("#99F1DE"));
+                lbl_erreur.setText("Une demande a ete envoye a " + tf_ajout.getText().trim());
             } catch (IllegalArgumentException iae) {
+                lbl_erreur.setTextFill(Paint.valueOf("#FF0000"));
                 lbl_erreur.setText(iae.getMessage());
             } catch (RemoteException re) {
                 System.out.println(re.getMessage());

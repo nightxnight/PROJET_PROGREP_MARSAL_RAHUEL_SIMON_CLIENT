@@ -2,6 +2,9 @@ package utils;
 
 import java.util.Objects;
 
+/*
+ * Classe utilitaire permettant de stocker deux objets en un
+ */
 public class Paire <A, B> {
 
     private A premier;

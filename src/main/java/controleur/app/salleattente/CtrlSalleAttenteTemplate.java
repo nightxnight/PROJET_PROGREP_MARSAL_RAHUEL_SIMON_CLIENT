@@ -18,6 +18,11 @@ import utils.composants.ErrorAlert;
 import java.rmi.RemoteException;
 import java.util.Optional;
 
+/*
+ * controleur des templates de salle d'attentes
+ * c'est a dire la representation des salles d'attentes
+ * dans la liste.
+ */
 public class CtrlSalleAttenteTemplate {
 
     private CtrlListeSalleAttente parent;
@@ -56,11 +61,24 @@ public class CtrlSalleAttenteTemplate {
         this.iv_prive.setVisible(salleAttenteProxy.isBesoinMdp());
     }
 
+    /*
+     * Entre dans une salle, les droits proprietaires sont donc null
+     */
     @FXML
     private void rejoindreSalle(MouseEvent event) {
         entrer(null);
     }
 
+    /*
+     * Demande au connecteur des salles d'attente de rentrer dans une salle.
+     * Une popup sera affiche si une erreur est leve
+     * Une fenetre de saisie de mot de passe sera affiche si un mot de passe est necessaire
+     * pour rejoindre la salle d'attente.
+     * Lorsqu'on demande de rejoindre une salle d'attente on passe egalement un listener
+     * pour que le serveur puisse nous recontacter
+     * Dans le cas ou le joueur entre dans la salle d'attente on recupere une interface
+     * salle d'attente puis on initialise le panel salle d'attente
+     */
     private void entrer(SalleAttenteProprietaireIF droitProprietaires){
         ListenerSalleAttente listenerSalleAttente = null;
         SalleAttenteIF salleAttenteIF = null;

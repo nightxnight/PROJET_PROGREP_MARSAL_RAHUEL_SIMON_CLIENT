@@ -17,6 +17,10 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+/*
+ * controleur associe a une popup permettant d'envoyer des invitations a ses amis
+ * pour rejoindre une salle d'attente
+ */
 public class CtrlInviterAmis {
 
     private SessionIF session;
@@ -41,7 +45,7 @@ public class CtrlInviterAmis {
         try {
             PortailAmisIF portailAmis = session.getPortailsAmis(null);
             ArrayList<JoueurProxy> listeAmis = portailAmis.getListeAmis(this.pseudo);
-            listeAmis = listeAmis.stream().filter(JoueurProxy::isEnLigne).collect(Collectors.toCollection(ArrayList::new));
+            //listeAmis = listeAmis.stream().filter(JoueurProxy::isEnLigne).collect(Collectors.toCollection(ArrayList::new));
             for(JoueurProxy ami : listeAmis)
                 creerPanelInvitationAmi(ami);
         } catch (RemoteException re) {
@@ -49,6 +53,9 @@ public class CtrlInviterAmis {
         }
     }
 
+    /*
+     * Pour chaque amis, cree un panel d'invitation
+     */
     private void creerPanelInvitationAmi(JoueurProxy joueurProxy) {
         lbl_vide.setVisible(false);
         try {
@@ -62,6 +69,9 @@ public class CtrlInviterAmis {
         }
     }
 
+    /*
+     * ferme la popup
+     */
     @FXML
     void annuler(MouseEvent event) {
         ((Stage) this.vBox_amis.getScene().getWindow()).close();

@@ -32,6 +32,9 @@ public class CtrlTemplateJeu {
         iv_logo.setImage(imageJeu);
     }
 
+    /*
+     * permet de rechercher les salles d'attentes qui jouent au jeu correspondant
+     */
     @FXML
     void chercherJeu(MouseEvent event) {
         ctrlListeSalleAttente.rechercher(lbl_nom_jeu.getText(), false, false);
@@ -40,6 +43,9 @@ public class CtrlTemplateJeu {
         else parent.afficher("liste_salleattente");
     }
 
+    /*
+     * Affiche les infos sur le jeux si la souris est au dessus du panel
+     */
     @FXML
     void afficherinfos(MouseEvent event) {
         pnl_infos.setVisible(true);

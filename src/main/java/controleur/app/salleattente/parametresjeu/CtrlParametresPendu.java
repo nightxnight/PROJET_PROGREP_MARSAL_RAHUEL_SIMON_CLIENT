@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
+/*
+ * controleur des parametres du pendu
+ */
 public class CtrlParametresPendu extends CtrlParametresJeux implements Initializable {
 
     /*
