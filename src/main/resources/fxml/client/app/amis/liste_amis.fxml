@@ -17,9 +17,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.CtrlListeAmis">
+<BorderPane fx:id="root" stylesheets="@../../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.CtrlListeAmis">
    <top>
-      <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" BorderPane.alignment="CENTER">
+      <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" styleClass="ChangeColor" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,6 +64,9 @@
                      <image>
                         <Image url="@../../../../Images/client/app/Amis/mesamis.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                   <ImageView fx:id="btn_demandes" accessibleRole="BUTTON" fitHeight="36.0" onMouseClicked="#changerPage" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -72,6 +75,9 @@
                      <FlowPane.margin>
                         <Insets left="30.0" />
                      </FlowPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                   <Label fx:id="lbl_nb_demandes" text="0">
                      <font>

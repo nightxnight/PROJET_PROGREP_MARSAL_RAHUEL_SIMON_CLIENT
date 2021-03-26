@@ -19,7 +19,7 @@
 
 <BorderPane prefHeight="800.0" prefWidth="800.0" stylesheets="@../../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.salleattente.CtrlListeSalleAttente">
    <top>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane styleClass="ChangeColor" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -45,6 +45,9 @@
                      <FlowPane.margin>
                         <Insets right="10.0" />
                      </FlowPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <ImageView fx:id="btn_actualiser" accessibleRole="BUTTON" fitHeight="64.0" fitWidth="64.0" onMouseClicked="#actualiser" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -112,6 +115,9 @@
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <CheckBox fx:id="cb_pleine" mnemonicParsing="false" scaleX="1.25" scaleY="1.25" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>

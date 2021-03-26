@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.chat.CtrlChatAmis">
+<BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" stylesheets="@../../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.amis.chat.CtrlChatAmis">
    <top>
       <VBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" BorderPane.alignment="CENTER">
          <children>
@@ -21,6 +22,9 @@
                      <image>
                         <Image url="@../../../../Images/client/app/salleattente/kick.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                </children>
                <padding>
@@ -53,6 +57,9 @@
                <image>
                   <Image url="@../../../../Images/client/app/salleattente/send.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
       </FlowPane>
@@ -63,7 +70,7 @@
    <center>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="vBox_message">
+            <VBox fx:id="vBox_message" styleClass="ChangeColor">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>

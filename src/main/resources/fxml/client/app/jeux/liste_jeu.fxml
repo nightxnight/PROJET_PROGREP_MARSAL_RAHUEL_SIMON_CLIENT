@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.jeux.listejeu.CtrlListeJeu">
+<BorderPane stylesheets="@../../../../css/Main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.jeux.listejeu.CtrlListeJeu">
    <top>
-      <FlowPane alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" BorderPane.alignment="CENTER_LEFT">
+      <FlowPane alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="150.0" styleClass="ChangeColor" BorderPane.alignment="CENTER_LEFT">
          <children>
             <ImageView fitHeight="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
