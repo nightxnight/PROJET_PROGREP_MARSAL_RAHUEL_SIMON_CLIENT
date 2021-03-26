@@ -41,3 +41,14 @@
 .scroll-pane {
     -fx-background-color:transparent;
 }
+
+.jeu-pane {
+    -fx-background-color: #444444;
+    -fx-background-radius: 50px;
+}
+
+.info-pane {
+    -fx-background-color: #3D3D3D;
+    -fx-background-radius: 50px;
+    -fx-opacity: 0.75;
+}

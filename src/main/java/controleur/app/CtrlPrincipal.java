@@ -1,6 +1,8 @@
 package controleur.app;
 
+import controleur.app.accueil.CtrlAccueil;
 import controleur.app.amis.CtrlListeAmis;
+import controleur.app.jeux.listejeu.CtrlListeJeu;
 import controleur.app.options.CtrlOptions;
 import controleur.app.salleattente.CtrlListeSalleAttente;
 import modele.implementation.connexion.joueur.Joueur;
@@ -59,10 +61,12 @@ public class CtrlPrincipal {
         try {
             FXMLLoader loader = null;
             /*
-             * Profil
+             * accueil
              */
             loader = prepareFXMLLoader("accueil/accueil.fxml");
             mapPane.put("accueil", loader.load());
+            CtrlAccueil controleur = loader.getController();
+            controleur.initialiser(pseudo);
             /*
              * Amis
              */
@@ -77,6 +81,13 @@ public class CtrlPrincipal {
             mapPane.put("liste_salleattente", loader.load());
             CtrlListeSalleAttente ctrlListeSalleAttente = loader.getController();
             ctrlListeSalleAttente.initialiser(this, pseudo, session);
+            /*
+             * Liste des jeux
+             */
+            loader = prepareFXMLLoader("jeux/liste_jeu.fxml");
+            mapPane.put("liste_jeu", loader.load());
+            CtrlListeJeu ctrlListeJeu = loader.getController();
+            ctrlListeJeu.initialiser(this, ctrlListeSalleAttente);
 
             loader = prepareFXMLLoader("options/options.fxml");
             mapPane.put("options", loader.load());
@@ -97,6 +108,7 @@ public class CtrlPrincipal {
 
     public void afficher(String nomPane) {
         this.pnl_principal.setCenter(mapPane.get(nomPane));
+        this.lbl_fil_ariane.setText("> " + nomPane);
     }
 
     public void ouvrirAPropos(){

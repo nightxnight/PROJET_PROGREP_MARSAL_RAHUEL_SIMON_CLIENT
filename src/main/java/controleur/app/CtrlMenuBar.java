@@ -29,7 +29,7 @@ public class CtrlMenuBar {
         else if (source.equals(btn_amis)) parent.afficher("liste_amis");
         else if (source.equals(btn_jeux)) {
             if(parent.getMapPane().containsKey("jeu")) parent.afficher("jeu");
-            else parent.afficher("liste_jeux");
+            else parent.afficher("liste_jeu");
         } else if (source.equals(btn_salleattente)) {
             if (parent.getMapPane().containsKey("salleattente")) parent.afficher("salleattente");
             else parent.afficher("liste_salleattente");

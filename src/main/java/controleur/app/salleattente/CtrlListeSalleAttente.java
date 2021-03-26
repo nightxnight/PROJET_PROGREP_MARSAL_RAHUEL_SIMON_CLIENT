@@ -101,10 +101,15 @@ public class CtrlListeSalleAttente implements Initializable {
 
     @FXML
     void rechercher(MouseEvent event) {
-        boolean masquerPleine = cb_pleine.isSelected();
-        boolean masquerMdp = cb_mdp.isSelected();
-        String jeu = chbox_jeu.getValue();
+        rechercher(chbox_jeu.getValue(), cb_pleine.isSelected(), cb_mdp.isSelected());
+    }
+
+    public void rechercher(String jeu, boolean masquerPleine, boolean masquerMdp) {
         try {
+            this.chbox_jeu.getSelectionModel().select(jeu);
+            this.cb_pleine.setSelected(masquerPleine);
+            this.cb_mdp.setSelected(masquerMdp);
+
             this.vbox_salleattente.getChildren().clear();
             ArrayList<SalleAttenteProxy> listeSallesAttentes = connecteur.rechercher(jeu, masquerPleine, masquerMdp);
             for (SalleAttenteProxy salleAttenteProxy : listeSallesAttentes)
