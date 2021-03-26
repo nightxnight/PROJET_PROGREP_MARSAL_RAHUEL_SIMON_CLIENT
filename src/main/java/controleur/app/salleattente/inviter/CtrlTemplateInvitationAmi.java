@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import utils.composants.ErrorAlert;
 
 import java.rmi.RemoteException;
 
@@ -51,10 +52,9 @@ public class CtrlTemplateInvitationAmi {
             Stage stage = (Stage) parent.getvBox_amis().getScene().getWindow();
             stage.close();
         } catch (RemoteException re) {
-            System.out.println(re.getMessage());
+            new ErrorAlert("Un probleme de communication est survenue").showAndWait();
         } catch (IllegalArgumentException iae) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, iae.getMessage(), ButtonType.OK);
-            alert.showAndWait();
+            new ErrorAlert(iae.getMessage()).showAndWait();
         }
     }
 
