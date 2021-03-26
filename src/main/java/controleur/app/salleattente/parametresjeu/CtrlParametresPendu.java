@@ -25,7 +25,7 @@ public class CtrlParametresPendu extends CtrlParametresJeux implements Initializ
         listeLangue.add("Francais");
         listeLangue.add("Anglais");
         listeLangue.add("Allemand");
-        chbox_langue.getItems().addAll(listeLangue); //TODO classe pour pendu pour stocker les langues et les mots;
+        chbox_langue.getItems().addAll(listeLangue);
     }
 
     @Override

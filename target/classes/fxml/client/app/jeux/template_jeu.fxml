@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#chercherJeu" onMouseEntered="#afficherinfos" onMouseExited="#masquerinfos" prefHeight="150.0" prefWidth="200.0" styleClass="jeu-pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.app.jeux.listejeu.CtrlTemplateJeu">
+   <children>
+      <ImageView fx:id="iv_logo" fitHeight="130.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+      <FlowPane fx:id="pnl_infos" alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="150.0" prefWidth="200.0" styleClass="info-pane" visible="false">
+         <children>
+            <Label fx:id="lbl_nom_jeu" text="NomJeu">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets bottom="10.0" />
+               </FlowPane.margin>
+            </Label>
+            <Label fx:id="lbl_description" maxWidth="175.0" text="Description du jeu" textAlignment="JUSTIFY" wrapText="true">
+               <font>
+                  <Font name="Impact" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</StackPane>
