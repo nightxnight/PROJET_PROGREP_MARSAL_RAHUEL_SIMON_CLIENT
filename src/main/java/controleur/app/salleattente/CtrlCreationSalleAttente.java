@@ -55,6 +55,7 @@ public class CtrlCreationSalleAttente {
         String nomSalle = tf_nom_salle.getText().trim();
         if(nomSalle.equals("")) {
             lbl_erreur.setText("Il faut preciser le nom de votre salle");
+            return;
         }
 
         String mdp = pf_mdp.getText().trim();

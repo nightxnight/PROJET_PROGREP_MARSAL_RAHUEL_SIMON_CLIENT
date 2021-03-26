@@ -10,6 +10,9 @@ import modele.client.stub.amis.AmisListenerIF;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+/*
+ * permet de faire le lien entre controleur et serveur
+ */
 public class AmisListener extends UnicastRemoteObject implements AmisListenerIF {
 
     public CtrlListeAmis controleurListeAmis;

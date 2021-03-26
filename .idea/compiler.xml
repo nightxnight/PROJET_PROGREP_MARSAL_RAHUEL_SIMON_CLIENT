@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PROJET_PROGREP_MARSAL_RAHUEL_SIMON_CLIENT" target="11" />
+      <module name="PROJET_PROGREP_MARSAL_RAHUEL_SIMON_CLIENT" target="13" />
     </bytecodeTargetLevel>
   </component>
 </project>

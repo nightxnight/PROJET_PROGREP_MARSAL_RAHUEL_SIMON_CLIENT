@@ -8,6 +8,9 @@ import modele.client.stub.jeux.allumettes.AllumettesListenerIF;
 
 import java.rmi.RemoteException;
 
+/*
+ * permet de faire le lien entre controleur et serveur
+ */
 public class AllumettesListener extends JeuxListener implements AllumettesListenerIF {
 
     private CtrlAllumettes controleur;

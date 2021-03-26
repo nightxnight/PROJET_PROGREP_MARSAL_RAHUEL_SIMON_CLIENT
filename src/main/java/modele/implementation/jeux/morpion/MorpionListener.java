@@ -8,6 +8,9 @@ import modele.client.stub.jeux.morpion.MorpionListenerIF;
 
 import java.rmi.RemoteException;
 
+/*
+ * permet de faire le lien entre controleur et serveur
+ */
 public class MorpionListener extends JeuxListener implements MorpionListenerIF {
 
     private CtrlMorpion controleur;

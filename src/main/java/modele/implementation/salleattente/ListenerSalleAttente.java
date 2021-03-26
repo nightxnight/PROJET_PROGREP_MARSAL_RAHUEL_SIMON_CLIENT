@@ -10,6 +10,9 @@ import modele.client.stub.salleattente.ListenerSalleAttenteIF;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+/*
+ * permet de faire le lien entre controleur et serveur
+ */
 public class ListenerSalleAttente extends UnicastRemoteObject implements ListenerSalleAttenteIF {
 
     private CtrlSalleAttente controleur;

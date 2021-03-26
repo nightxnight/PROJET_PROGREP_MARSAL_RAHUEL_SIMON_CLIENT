@@ -8,6 +8,9 @@ import modele.client.stub.jeux.pendu.PenduListenerIF;
 
 import java.rmi.RemoteException;
 
+/*
+ * permet de faire le lien entre controleur et serveur
+ */
 public class PenduListener extends JeuxListener implements PenduListenerIF {
 
     /*
