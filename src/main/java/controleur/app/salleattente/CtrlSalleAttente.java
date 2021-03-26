@@ -156,7 +156,7 @@ public class CtrlSalleAttente implements Initializable {
      */
     private void mettreAjourPanelParametre(SalleAttenteProprietaireIF droitsProprietaire) {
         boolean isProprietaire = droitsProprietaire != null;
-        pnl_parametres.setDisable(isProprietaire);
+        pnl_parametres.setDisable(!isProprietaire);
     }
 
     /*
@@ -435,7 +435,7 @@ public class CtrlSalleAttente implements Initializable {
      * le client chargera le panel correspondant a la valeur de JeuxEnum
      * le connecteur renverra une interface correspondant au jeu grace
      * a un heritage des interfaces, l'implementation cote serveur est egalement
-     * creer a partir de JeuxEnum grace a un heritage des implementations.
+     * creer a partir de JeuxEnum grace a un heritage des implementations
      */
     public void rejoindrePartie(ConnecteurJeuxIF connecteur, JeuxEnum jeu) {
         Platform.runLater(() -> {
