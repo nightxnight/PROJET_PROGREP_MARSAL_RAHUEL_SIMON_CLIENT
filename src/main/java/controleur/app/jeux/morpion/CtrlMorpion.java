@@ -3,6 +3,7 @@ package controleur.app.jeux.morpion;
 import controleur.app.CtrlPrincipal;
 import controleur.app.jeux.CtrlJeu;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Paint;
 import modele.implementation.jeux.JeuxListener;
 import modele.implementation.jeux.morpion.MorpionListener;
 import modele.serveur.stub.jeux.application.JeuxIF;
@@ -74,12 +75,16 @@ public class CtrlMorpion extends CtrlJeu {
 
     public void bloquerCase(int ligne, int col) {
         if(!peutJouer || !partieLance) return;
-
+        lbl_message.setTextFill(Paint.valueOf("#FFFFFF"));
         try {
             jeu.bloquerCase(pseudo, ligne, col, symbole);
         }
         catch (RemoteException re){
             System.out.println(re.getMessage());
+        } catch (IllegalArgumentException iae) {
+            lbl_message.setText("Cette case est deja bloque.");
+            lbl_message.setTextFill(Paint.valueOf("#FF0000"));
+            return;
         }
         this.peutJouer = false;
         activerComposants(peutJouer);
@@ -119,8 +124,6 @@ public class CtrlMorpion extends CtrlJeu {
 
     public void recupererCaseBloque(int ligne, int colonne, char symbole) {
         Platform.runLater(() -> {
-            System.out.println(ligne);
-            System.out.println(colonne);
             gp_morpion.getMapIv().get(new Pair<Integer, Integer>(ligne, colonne)).setImage((symbole == 'X') ? croix : rond);
         });
     }
