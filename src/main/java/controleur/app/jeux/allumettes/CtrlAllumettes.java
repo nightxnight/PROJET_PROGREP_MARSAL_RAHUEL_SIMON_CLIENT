@@ -97,7 +97,7 @@ public class CtrlAllumettes extends CtrlJeu {
 
         try {
             jeu.prendreAllumettes(pseudo, nbAllumettes);
-            lbl_pris.setTextFill(Paint.valueOf("#000000"));
+            lbl_pris.setTextFill(Paint.valueOf("#FFFFFF"));
         } catch (RemoteException re) {
             System.out.println(re.getMessage());
         } catch (IllegalArgumentException iae) {

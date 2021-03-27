@@ -56,3 +56,8 @@
 .ChangeColor{
     -fx-background-color: rgb(60, 60, 60);;
 }
+
+.invitation {
+    -fx-background-color: rgb(40,40,40);
+    -fx-background-radius: 50px
+}

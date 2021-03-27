@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import utils.composants.ErrorAlert;
 
 /*
  * Les invitations permettent d'inviter un amis dans une  salle  d'attente.
@@ -72,8 +73,7 @@ public class CtrlInvitation {
             ctrlPrincipal.afficher("salleattente");
             parent.getvBox_message().getChildren().remove(root);
         } catch (IllegalArgumentException iae) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, iae.getMessage(), ButtonType.OK);
-            alert.showAndWait();
+            new ErrorAlert(iae.getMessage()).showAndWait();
             parent.getvBox_message().getChildren().remove(root);
         } catch (Exception e) {
             System.out.println(e.getMessage());

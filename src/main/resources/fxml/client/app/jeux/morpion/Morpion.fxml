@@ -32,4 +32,23 @@
    <center>
       <FlowPane fx:id="pnl_principal" alignment="CENTER" BorderPane.alignment="CENTER" />
    </center>
+   <bottom>
+      <FlowPane alignment="CENTER" prefHeight="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Ton symbole : " textAlignment="CENTER">
+               <font>
+                  <Font name="Impact" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="iv_monsymbole" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../Images/client/app/jeux/morpion/libre.png" />
+               </image>
+               <FlowPane.margin>
+                  <Insets top="12.0" />
+               </FlowPane.margin>
+            </ImageView>
+         </children>
+      </FlowPane>
+   </bottom>
 </BorderPane>
